@@ -1,14 +1,26 @@
+{% extends "listing/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'listing/index.css' %}">
-    <title>Real Props</title>
-</head>
-<body>
-<h1>Listing</h1>    
-</body>
-</html>
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'listing/background_styles.css' %}">
+<link rel="stylesheet" href="{% static 'listing/index.css' %}">
+<script src="{% static 'listing/index.js' %}" defer></script>
+{% endblock %}
+
+{% block title %}
+Real Prop
+{% endblock %}
+
+{% block body %}
+      <div class="hero">
+        <div class="hero__main">
+            <h1 class="hero__primary-text hero__text">Find your dream  home</h1>
+            <h2 class="hero__secondary-text hero__text">Explore our growing list of properties around you.</h2>
+            <div class="hero__buttons"> 
+              <a href="#"><button class="hero__btn-search"><i class="fa fa-search"></i> Search Properties</button></a>
+              <a href="{% url 'list_property' %}"><button class="hero__btn-submit"><i class="fa fa-upload"></i> List Property</button></a>
+            </div>
+        </div>
+      </div>
+      {% endblock %}
